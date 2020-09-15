@@ -5,4 +5,8 @@ https://github.com/nytimes/covid-19-data
 
 I join this data to a csv file which has latitude, longitude information for US counties. I wanted to visualize COVID cases and deaths on a US map and this data will help me achieve that objective. The csv file is called, 2019_Gaz_counties_national.csv and was downloaded from, https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html
 
-Ultimately I plan to deploy the app on Heroku
+I deployed the app on Heroku. You can see it at:
+https://streamlit-covid-app.herokuapp.com/
+
+To help me deploy the app, I followed this great Youtube tutorial:
+https://www.youtube.com/watch?v=mQ7rGcE766k
