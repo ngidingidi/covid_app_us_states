@@ -12,6 +12,7 @@ To help me deploy the app, I followed this great Youtube tutorial:
 https://www.youtube.com/watch?v=mQ7rGcE766k
 
 My favorite part about this project is the data visualization. I use a bubble plot to show Covid-19 hotspots in different counties in the US.
+I should mention that in order to make this plot, I selected the latest date which has reported Covid19-cases for each US county since that date corresponds to the cumulative number of cases reported from the day data collection began in Jan/Feb 2020. The map below shows cumulative cases reported for September 22, 2020.
 
 ![image](https://user-images.githubusercontent.com/31268268/94161325-69836b00-fe3a-11ea-8ba0-1db3232b5f76.png)
 
