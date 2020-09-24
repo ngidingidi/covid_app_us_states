@@ -13,4 +13,5 @@ https://www.youtube.com/watch?v=mQ7rGcE766k
 
 My favorite part about this project is the data visualization. I use a bubble plot to show Covid-19 hotspots in different counties in the US.
 
+![image](https://user-images.githubusercontent.com/31268268/94161325-69836b00-fe3a-11ea-8ba0-1db3232b5f76.png)
 
