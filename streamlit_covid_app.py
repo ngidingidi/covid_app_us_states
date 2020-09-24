@@ -4,6 +4,7 @@ import numpy as np
 import altair as alt
 import pydeck as pdk
 import plotly.express as px
+import plotly.graph_objects as go
 
 st.write("# COVID-19 Cases and Deaths in US Counties")
 DATA_URL = 'https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv'
@@ -37,7 +38,7 @@ subset_data = data
 
 ### MULTISELECT
 state_name_input = st.sidebar.multiselect(
-'State name',
+'Select State',
 data.groupby('state').size().reset_index()['state'].tolist(), default=['Arizona'])
 
 # by state name
@@ -63,3 +64,30 @@ fig_deaths = px.scatter(subset_data, subset_data['date'], subset_data['deaths'],
 st.plotly_chart(fig_deaths)
 
 ########################################################################################
+### experimenting with maps
+
+latest_update = data.sort_values(['date'], ascending=False).reset_index(drop=True).iloc[:2]
+latest_date = latest_update['date'].values[0]
+current_data = data[data['date']==latest_date]
+
+fig = go.Figure()
+
+fig.add_trace(go.Scattergeo(
+        locationmode = 'USA-states',
+        lon = current_data['longitude'],
+        lat = current_data['latitude'],
+        text = current_data['county'],
+        marker = dict(
+            size = current_data['cases']/5000
+        )))
+    
+fig.update_layout(
+        title_text = 'Bubble Map of Covid-19 Cases in Different US Counties<br>(Click legend to toggle)',
+        showlegend = True,
+        geo = dict(
+            scope = 'usa',
+            landcolor = 'rgb(217, 217, 217)',
+        )
+    )
+
+st.plotly_chart(fig)
