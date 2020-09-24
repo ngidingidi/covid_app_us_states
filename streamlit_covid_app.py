@@ -19,6 +19,7 @@ def load_data():
     nyt_covid_file = pd.read_csv(DATA_URL)
     joined_csv = pd.merge(nyt_covid_file, location, how='inner', left_on=['fips'], 
                       right_on=['GEOID'])
+    joined_csv.rename(columns={"INTPTLAT": "latitude", "INTPTLONG": "longitude"}, inplace=True)
     return joined_csv
 
 data_load_state = st.text('Loading data...')
