@@ -10,3 +10,7 @@ https://streamlit-covid-app.herokuapp.com/
 
 To help me deploy the app, I followed this great Youtube tutorial:
 https://www.youtube.com/watch?v=mQ7rGcE766k
+
+My favorite part about this project is the data visualization. I use a bubble plot to show Covid-19 hotspots in different counties in the US.
+
+
